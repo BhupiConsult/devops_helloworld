@@ -8,10 +8,31 @@ pipeline {
     }
 
     stage('Test') {
+      parallel {
+        stage('Test Windows') {
+          steps {
+            echo 'Windows'
+          }
+        }
+
+        stage('Test Linux') {
+          steps {
+            echo 'Testing on Linux'
+          }
+        }
+
+        stage('Test MacOS') {
+          steps {
+            echo 'Testing on MacOS'
+          }
+        }
+
+      }
+    }
+
+    stage('Deploy') {
       steps {
-        echo 'Windows'
-        echo 'Linux'
-        echo 'MacOS'
+        echo 'Deployment'
       }
     }
 
