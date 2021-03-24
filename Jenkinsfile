@@ -7,5 +7,13 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        echo 'Windows'
+        echo 'Linux'
+        echo 'MacOS'
+      }
+    }
+
   }
 }
